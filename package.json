@@ -1,0 +1,22 @@
+{
+  "name": "typescript-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aipakazuma/typescript-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aipakazuma/typescript-study/issues"
+  },
+  "homepage": "https://github.com/Aipakazuma/typescript-study#readme",
+  "devDependencies": {
+    "typescript": "^2.1.4"
+  }
+}

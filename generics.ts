@@ -21,8 +21,7 @@ function useMultipleGenerics<T, U>(string: T, number: U): void {
 class TestModel<T> {
   constructor(
     private _id: number,
-    private _name: string,
-    private _genericsTest: T
+    private _name: string
   ) {
   }
 
@@ -34,8 +33,8 @@ class TestModel<T> {
     return this._name;
   }
 
-  genericsTest() {
-    return this._genericsTest;
+  genericsTest(methodGenerics: T): T {
+    return methodGenerics;
   }
 }
 
@@ -44,5 +43,9 @@ class TestModel<T> {
 // console.log(testModel.name());
 
 // use generics
-var testModel = new TestModel<string>(10, 'Aipa', 'Aipa2');
-console.log(testModel.genericsTest());
+// var testModel = new TestModel<string>(10, 'Aipa', 'Aipa2');
+// console.log(testModel.genericsTest());
+
+// method generics
+var testModel = new TestModel<string>(10, 'Aipa');
+console.log(testModel.genericsTest('Hello'));

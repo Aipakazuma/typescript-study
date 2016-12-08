@@ -14,10 +14,9 @@ function useMultipleGenerics(string, number) {
 }
 // useMultipleGenerics<string, number>('Hello', 100);
 var TestModel = (function () {
-    function TestModel(_id, _name, _genericsTest) {
+    function TestModel(_id, _name) {
         this._id = _id;
         this._name = _name;
-        this._genericsTest = _genericsTest;
     }
     TestModel.prototype.id = function () {
         return this._id;
@@ -25,8 +24,8 @@ var TestModel = (function () {
     TestModel.prototype.name = function () {
         return this._name;
     };
-    TestModel.prototype.genericsTest = function () {
-        return this._genericsTest;
+    TestModel.prototype.genericsTest = function (methodGenerics) {
+        return methodGenerics;
     };
     return TestModel;
 }());
@@ -34,5 +33,8 @@ var TestModel = (function () {
 // console.log(testModel.id());
 // console.log(testModel.name());
 // use generics
-var testModel = new TestModel(10, 'Aipa', 'Aipa2');
-console.log(testModel.genericsTest());
+// var testModel = new TestModel<string>(10, 'Aipa', 'Aipa2');
+// console.log(testModel.genericsTest());
+// method generics
+var testModel = new TestModel(10, 'Aipa');
+console.log(testModel.genericsTest('Hello'));
